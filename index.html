@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tamako Pay - Login & Signup</title>
-    <link rel="manifest" href="/manifest.json">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Tamako Pay - ログイン＆作成</title>
+    <link rel="manifest" href="tamako-pay2/manifest.json">
     <!-- Add your CSS links here -->
     <style>
         /* Add your custom CSS styles here */
@@ -24,8 +24,6 @@
             padding: 20px;
         }
         form {
-            max-width: 400px;
-            margin: 0 auto;
             background-color: #fff;
             padding: 20px;
             border-radius: 5px;
@@ -49,6 +47,9 @@
         input[type="submit"]:hover {
             background-color: #555;
         }
+        .hidden {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -56,25 +57,50 @@
         <h1>Welcome to Tamako Pay!</h1>
     </header>
     <main>
-        <h2>Login</h2>
-        <form id="loginForm">
-            <input type="text" name="username" placeholder="Username" required>
-            <input type="password" name="password" placeholder="Password" required>
-            <input type="submit" value="Login">
-        </form>
-        <hr>
-        <h2>Signup</h2>
-        <form id="signupForm">
-            <input type="text" name="fullname" placeholder="Full Name" required>
-            <input type="text" name="username" placeholder="Username" required>
-            <input type="password" name="password" placeholder="Password" required>
-            <input type="submit" value="Signup">
-        </form>
+        <div id="loginFormContainer">
+            <h2>ログイン</h2>
+            <form id="loginForm">
+                <input type="text" name="username" placeholder="ユーザー名" required><br>
+                <input type="password" name="password" placeholder="パスワード" required><br>
+                <input type="submit" value="ログイン">
+            </form>
+            <p>アカウントをお持ちでない場合は<a href="#" id="showSignupForm">こちら</a></p>
+        </div>
+        <div id="signupFormContainer" class="hidden">
+            <h2>新規作成</h2>
+            <form id="signupForm">
+                <input type="text" name="fullname" placeholder="氏名" required><br>
+                <input type="text" name="username" placeholder="ユーザー名" required><br>
+                <input type="password" name="password" placeholder="パスワード" required><br>
+                <input type="submit" value="新規作成">
+            </form>
+            <p>アカウントを既にお持ちの場合は<a href="#" id="showLoginForm">こちら</a></p>
+        </div>
     </main>
     <footer>
         <p>© 2024 Tamako Pay. All rights reserved.</p>
     </footer>
 
     <!-- Add your JavaScript links here -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const loginFormContainer = document.getElementById('loginFormContainer');
+            const signupFormContainer = document.getElementById('signupFormContainer');
+            const showSignupFormLink = document.getElementById('showSignupForm');
+            const showLoginFormLink = document.getElementById('showLoginForm');
+
+            showSignupFormLink.addEventListener('click', function(event) {
+                event.preventDefault();
+                loginFormContainer.classList.add('hidden');
+                signupFormContainer.classList.remove('hidden');
+            });
+
+            showLoginFormLink.addEventListener('click', function(event) {
+                event.preventDefault();
+                signupFormContainer.classList.add('hidden');
+                loginFormContainer.classList.remove('hidden');
+            });
+        });
+    </script>
 </body>
 </html>
