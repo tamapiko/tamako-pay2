@@ -24,7 +24,7 @@
 			"purpose": "maskable"
 		},
 		{
-			"src": "./appicon512.gif",
+			"src": "./appicon512.png",
 			"sizes": "512x512",
 			"purpose": "maskable"
 		}
