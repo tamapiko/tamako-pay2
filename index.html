@@ -2,9 +2,8 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Tamako Pay ログイン</title>
-<link rel="manifest" href="/tamako-pay2/manifest.json">
 <style>
   body {
     font-family: Arial, sans-serif;
@@ -79,6 +78,16 @@
     </div>
   </form>
 </div>
+
+<script>
+  // PWA としてアプリケーション化された場合のみ manifest.json を追加
+  if (window.matchMedia('(display-mode: standalone)').matches) {
+    var link = document.createElement('link');
+    link.rel = 'manifest';
+    link.href = '/tamako-pay2/manifest.json';
+    document.head.appendChild(link);
+  }
+</script>
 
 </body>
 </html>
