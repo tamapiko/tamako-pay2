@@ -1,93 +1,80 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Tamako Pay ログイン</title>
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f0f0f0;
-  }
-
-  .container {
-    width: 80%;
-    max-width: 400px;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-
-  .input-group {
-    margin-bottom: 20px;
-  }
-
-  .input-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-  }
-
-  .input-group input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-
-  .input-group input[type="submit"] {
-    background-color: #007bff;
-    color: #fff;
-    cursor: pointer;
-  }
-
-  .input-group input[type="submit"]:hover {
-    background-color: #0056b3;
-  }
-
-  @media (min-width: 768px) {
-    /* 768px以上の場合は非表示 */
-    body {
-      display: none;
-    }
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamako Pay - Login & Signup</title>
+    <link rel="manifest" href="/manifest.json">
+    <!-- Add your CSS links here -->
+    <style>
+        /* Add your custom CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        main {
+            padding: 20px;
+        }
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        input[type="text"],
+        input[type="password"],
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #555;
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <h1>Welcome to Tamako Pay!</h1>
+    </header>
+    <main>
+        <h2>Login</h2>
+        <form id="loginForm">
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="submit" value="Login">
+        </form>
+        <hr>
+        <h2>Signup</h2>
+        <form id="signupForm">
+            <input type="text" name="fullname" placeholder="Full Name" required>
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="submit" value="Signup">
+        </form>
+    </main>
+    <footer>
+        <p>© 2024 Tamako Pay. All rights reserved.</p>
+    </footer>
 
-<div class="container">
-  <h2>Tamako Pay ログイン</h2>
-  <form>
-    <div class="input-group">
-      <label for="phone">携帯電話番号:</label>
-      <input type="tel" id="phone" name="phone" required>
-    </div>
-    <div class="input-group">
-      <label for="password">パスワード:</label>
-      <input type="password" id="password" name="password" required>
-    </div>
-    <div class="input-group">
-      <input type="submit" value="ログイン">
-    </div>
-  </form>
-</div>
-
-<script>
-  // PWA としてアプリケーション化された場合のみ manifest.json を追加
-  if (window.matchMedia('(display-mode: standalone)').matches) {
-    var link = document.createElement('link');
-    link.rel = 'manifest';
-    link.href = '/tamako-pay2/manifest.json';
-    document.head.appendChild(link);
-  }
-</script>
-
+    <!-- Add your JavaScript links here -->
 </body>
 </html>
