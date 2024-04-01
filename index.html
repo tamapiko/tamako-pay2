@@ -1,86 +1,84 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tamako Pay ログイン</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #a2c99b; /* メインカラーを#a2c99bに変更 */
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tamako Pay ログイン</title>
+<link rel="manifest" href="/manifest.json">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+  }
 
-        .container {
-            width: 90%; /* モバイルデバイスでも画面いっぱいに広がるように変更 */
-            max-width: 400px;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
+  .container {
+    width: 80%;
+    max-width: 400px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
 
-        .input-group {
-            margin-bottom: 20px;
-        }
+  .input-group {
+    margin-bottom: 20px;
+  }
 
-        .input-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
+  .input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
 
-        .input-group input {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
+  .input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
 
-        .input-group input[type="submit"] {
-            background-color: #007bff;
-            color: #fff;
-            cursor: pointer;
-        }
+  .input-group input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+  }
 
-        .input-group input[type="submit"]:hover {
-            background-color: #0056b3;
-        }
+  .input-group input[type="submit"]:hover {
+    background-color: #0056b3;
+  }
 
-        @media (min-width: 768px) {
-            /* 768px以上の場合は非表示 */
-            body {
-                display: none;
-            }
-        }
-    </style>
+  @media (min-width: 768px) {
+    /* 768px以上の場合は非表示 */
+    body {
+      display: none;
+    }
+  }
+</style>
 </head>
-
 <body>
 
-    <div class="container">
-        <h2>Tamako Pay ログイン</h2>
-        <form>
-            <div class="input-group">
-                <label for="phone">携帯電話番号:</label>
-                <input type="tel" id="phone" name="phone" required>
-            </div>
-            <div class="input-group">
-                <label for="password">パスワード:</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <div class="input-group">
-                <input type="submit" value="ログイン">
-            </div>
-        </form>
+<div class="container">
+  <h2>Tamako Pay ログイン</h2>
+  <form>
+    <div class="input-group">
+      <label for="phone">携帯電話番号:</label>
+      <input type="tel" id="phone" name="phone" required>
     </div>
+    <div class="input-group">
+      <label for="password">パスワード:</label>
+      <input type="password" id="password" name="password" required>
+    </div>
+    <div class="input-group">
+      <input type="submit" value="ログイン">
+    </div>
+  </form>
+</div>
 
 </body>
-
 </html>
