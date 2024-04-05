@@ -4,31 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Tamako Pay</title>
-    <link rel="manifest" href="/manifest.json">
-    <link rel="stylesheet" type="text/css" href="/styles.css">
-    <!-- Add your PWA-specific meta tags and icons here -->
-    <link rel="apple-touch-icon" href="/appicon512.png">
-    <link rel="apple-touch-startup-image" href="/appicon512.png">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <!-- Hide content when not opened on a smartphone -->
+    <meta name="description" content="ポイ活型決済サービス" />
+    <meta name="theme-color" content="#f0f6ff"/>
+    <link rel="manifest" href="./manifest.json">
+    <link rel="apple-touch-icon" href="./appicon512.png">
     <style>
-        body:not(.mobile) main {
+        /* Add your custom CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        main {
+            padding: 20px;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        input[type="text"],
+        input[type="password"],
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #555;
+        }
+        .hidden {
             display: none;
         }
-        body.mobile main {
-            display: block;
-        }
     </style>
-    <script>
-        // Detect if the page is opened on a smartphone
-        const userAgent = navigator.userAgent.toLowerCase();
-        const isMobile = /iphone|ipad|ipod|android/.test(userAgent);
-        if (isMobile) {
-            document.body.classList.add('mobile');
-        }
-    </script>
 </head>
-<body class="mobile">
+<body>
     <header>
         <h1>Tamako Pay</h1>
     </header>
@@ -56,6 +82,26 @@
     <footer>
         <p>© 2024 Tamako Pay. All rights reserved.</p>
     </footer>
-    <script src="/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const loginFormContainer = document.getElementById('loginFormContainer');
+            const signupFormContainer = document.getElementById('signupFormContainer');
+            const showSignupFormLink = document.getElementById('showSignupForm');
+            const showLoginFormLink = document.getElementById('showLoginForm');
+
+            showSignupFormLink.addEventListener('click', function(event) {
+                event.preventDefault();
+                loginFormContainer.classList.add('hidden');
+                signupFormContainer.classList.remove('hidden');
+            });
+
+            showLoginFormLink.addEventListener('click', function(event) {
+                event.preventDefault();
+                signupFormContainer.classList.add('hidden');
+                loginFormContainer.classList.remove('hidden');
+            });
+        });
+    </script>
 </body>
 </html>
+
