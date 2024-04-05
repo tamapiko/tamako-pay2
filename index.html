@@ -10,17 +10,25 @@
     <link rel="apple-touch-icon" href="/appicon512.png">
     <link rel="apple-touch-startup-image" href="/appicon512.png">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <!-- Hide content when not launched in standalone mode (PWA) -->
+    <!-- Hide content when not opened on a smartphone -->
     <style>
-        body:not(.standalone) main {
+        body:not(.mobile) main {
             display: none;
         }
-        body.standalone main {
+        body.mobile main {
             display: block;
         }
     </style>
+    <script>
+        // Detect if the page is opened on a smartphone
+        const userAgent = navigator.userAgent.toLowerCase();
+        const isMobile = /iphone|ipad|ipod|android/.test(userAgent);
+        if (isMobile) {
+            document.body.classList.add('mobile');
+        }
+    </script>
 </head>
-<body class="standalone">
+<body class="mobile">
     <header>
         <h1>Tamako Pay</h1>
     </header>
@@ -51,4 +59,3 @@
     <script src="/script.js"></script>
 </body>
 </html>
-
