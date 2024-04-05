@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Tamako Pay</title>
+    <title>Tamako Pay - ログイン＆作成</title>
     <meta name="description" content="ポイ活型決済サービス" />
     <meta name="theme-color" content="#f0f6ff"/>
     <link rel="manifest" href="./manifest.json">
@@ -15,26 +15,40 @@
             background-color: #f0f0f0;
             margin: 0;
             padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
         }
         header {
             background-color: #333;
             color: #fff;
             padding: 20px;
             text-align: center;
+            width: 100%;
         }
         main {
             padding: 20px;
+            text-align: center;
+        }
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
         }
         form {
             background-color: #fff;
             padding: 20px;
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            width: 100%;
+            max-width: 400px;
         }
         input[type="text"],
         input[type="password"],
         input[type="submit"] {
-            width: 100%;
+            width: calc(100% - 22px);
             padding: 10px;
             margin-bottom: 10px;
             border: 1px solid #ccc;
@@ -42,21 +56,32 @@
             box-sizing: border-box;
         }
         input[type="submit"] {
-            background-color: #333;
+            background-color: #4CAF50;
             color: #fff;
             cursor: pointer;
+            border: none;
+            transition: background-color 0.3s;
         }
         input[type="submit"]:hover {
-            background-color: #555;
+            background-color: #45a049;
         }
-        .hidden {
-            display: none;
+        p {
+            margin-bottom: 20px;
+            color: #666;
+        }
+        .link {
+            color: #4CAF50;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .link:hover {
+            color: #45a049;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Tamako Pay</h1>
+        <h1>Welcome to Tamako Pay</h1>
     </header>
     <main>
         <div id="loginFormContainer">
@@ -66,7 +91,7 @@
                 <input type="password" name="password" placeholder="パスワード" required><br>
                 <input type="submit" value="ログイン">
             </form>
-            <p>アカウントをお持ちでない場合は<a href="#" id="showSignupForm">こちら</a></p>
+            <p>アカウントをお持ちでない場合は<a href="#" class="link" id="showSignupForm">こちら</a></p>
         </div>
         <div id="signupFormContainer" class="hidden">
             <h2>新規作成</h2>
@@ -76,12 +101,14 @@
                 <input type="password" name="password" placeholder="パスワード" required><br>
                 <input type="submit" value="新規作成">
             </form>
-            <p>アカウントを既にお持ちの場合は<a href="#" id="showLoginForm">こちら</a></p>
+            <p>アカウントを既にお持ちの場合は<a href="#" class="link" id="showLoginForm">こちら</a></p>
         </div>
     </main>
     <footer>
         <p>© 2024 Tamako Pay. All rights reserved.</p>
     </footer>
+
+    <!-- Add your JavaScript links here -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const loginFormContainer = document.getElementById('loginFormContainer');
@@ -99,24 +126,6 @@
                 event.preventDefault();
                 signupFormContainer.classList.add('hidden');
                 loginFormContainer.classList.remove('hidden');
-            });
-
-            const loginForm = document.getElementById('loginForm');
-            const signupForm = document.getElementById('signupForm');
-
-            // Replace this with your actual login and signup logic
-            loginForm.addEventListener('submit', function(event) {
-                event.preventDefault();
-                // Perform login logic here
-                // If login successful, redirect to home.html
-                window.location.href = 'home.html';
-            });
-
-            signupForm.addEventListener('submit', function(event) {
-                event.preventDefault();
-                // Perform signup logic here
-                // If signup successful, redirect to home.html
-                window.location.href = 'home.html';
             });
         });
     </script>
