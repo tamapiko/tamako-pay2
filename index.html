@@ -100,6 +100,24 @@
                 signupFormContainer.classList.add('hidden');
                 loginFormContainer.classList.remove('hidden');
             });
+
+            const loginForm = document.getElementById('loginForm');
+            const signupForm = document.getElementById('signupForm');
+
+            // Replace this with your actual login and signup logic
+            loginForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                // Perform login logic here
+                // If login successful, redirect to home.html
+                window.location.href = 'home.html';
+            });
+
+            signupForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                // Perform signup logic here
+                // If signup successful, redirect to home.html
+                window.location.href = 'home.html';
+            });
         });
     </script>
 </body>
