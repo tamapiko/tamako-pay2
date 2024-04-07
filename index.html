@@ -2,14 +2,14 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ポイ活型決済サービス">
+    <meta name="theme-color" content="#f0f6ff">
     <title>Tamako Pay - ログイン</title>
-    <meta name="description" content="ポイ活型決済サービス" />
-    <meta name="theme-color" content="#f0f6ff"/>
     <link rel="manifest" href="./manifest.json">
     <link rel="apple-touch-icon" href="./appicon512.png">
     <style>
-        /* Add your custom CSS styles here */
+        /* Custom CSS styles */
         body {
             font-family: Arial, sans-serif;
             background-color: #f0f0f0;
@@ -20,37 +20,29 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
+            overflow: hidden; /* 画面スクロールを無効化 */
         }
         header {
             background-color: #333;
             color: #fff;
             padding: 20px;
             text-align: center;
-            width: 100%;
         }
         main {
             padding: 20px;
-            text-align: center;
-            width: 100%;
-            max-width: 300px;
-        }
-        h2 {
-            margin-bottom: 20px;
-            color: #333;
-        }
-        form {
+            width: 80%;
+            max-width: 400px;
             background-color: #fff;
-            padding: 20px;
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-            width: 100%;
-            box-sizing: border-box;
+        }
+        form {
+            padding: 20px;
         }
         input[type="text"],
         input[type="password"],
         input[type="submit"] {
-            width: calc(100% - 22px);
+            width: 100%;
             padding: 10px;
             margin-bottom: 10px;
             border: 1px solid #ccc;
@@ -58,26 +50,12 @@
             box-sizing: border-box;
         }
         input[type="submit"] {
-            background-color: #4CAF50;
+            background-color: #333;
             color: #fff;
             cursor: pointer;
-            border: none;
-            transition: background-color 0.3s;
         }
         input[type="submit"]:hover {
-            background-color: #45a049;
-        }
-        p {
-            margin-bottom: 20px;
-            color: #666;
-        }
-        .link {
-            color: #4CAF50;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        .link:hover {
-            color: #45a049;
+            background-color: #555;
         }
         .hidden {
             display: none;
@@ -86,7 +64,7 @@
 </head>
 <body>
     <header>
-        <h1>Welcome to Tamako Pay</h1>
+        <h1>Welcome to Tamako Pay!</h1>
     </header>
     <main>
         <div id="loginFormContainer">
@@ -96,7 +74,7 @@
                 <input type="password" name="password" placeholder="パスワード" required><br>
                 <input type="submit" value="ログイン">
             </form>
-            <p>アカウントをお持ちでない場合は<a href="#" class="link" id="showSignupForm">こちら</a></p>
+            <p>アカウントをお持ちでない場合は<a href="#" id="showSignupForm">こちら</a></p>
         </div>
         <div id="signupFormContainer" class="hidden">
             <h2>新規作成</h2>
@@ -106,14 +84,14 @@
                 <input type="password" name="password" placeholder="パスワード" required><br>
                 <input type="submit" value="新規作成">
             </form>
-            <p>アカウントを既にお持ちの場合は<a href="#" class="link" id="showLoginForm">こちら</a></p>
+            <p>アカウントを既にお持ちの場合は<a href="#" id="showLoginForm">こちら</a></p>
         </div>
     </main>
     <footer>
         <p>© 2024 Tamako Pay. All rights reserved.</p>
     </footer>
 
-    <!-- Add your JavaScript links here -->
+    <!-- JavaScript -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const loginFormContainer = document.getElementById('loginFormContainer');
@@ -136,4 +114,5 @@
     </script>
 </body>
 </html>
+
 
